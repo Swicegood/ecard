@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<H1>Choose from the Following eCards</H1
+{% load static %}
+{% for image in images %}
+<img src='/static/{{image}}' />
+{% endfor %}
+</head>
+<body>
+
+</body>
+</html>

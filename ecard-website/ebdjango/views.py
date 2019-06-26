@@ -1,9 +1,14 @@
 from django.shortcuts import render
-
+import os
 # Create your views here.
 
 from django.http import HttpResponse
 
 
+
 def index(request):
-    return HttpResponse("<H1>Hello, world. You're at the eCard index.</H1>")
+    path = "ebdjango/static"
+    img_list = os.listdir(path)
+    return render(request, 'ecard/index.html', {'images': img_list})
+
+
