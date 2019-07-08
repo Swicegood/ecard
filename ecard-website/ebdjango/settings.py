@@ -118,8 +118,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "ebdjango/static/")
+STATIC_ROOT = ''
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "ebdjango/static/"),)
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
-print(STATIC_ROOT)
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 1025
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = False

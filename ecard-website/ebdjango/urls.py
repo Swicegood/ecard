@@ -23,6 +23,9 @@ app_name = 'ebdjango'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('detail/', views.detail, name='detail'),
+    path('thankyou/', views.thankyou, name='thankyou'),
+    path('thankyou/thanks/', views.thanks, name='thanks')
   ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

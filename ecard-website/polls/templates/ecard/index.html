@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<H1>Choose from the Following eCards</H1
-{% load static %}
-{% for image in images %}
-<img src='/static/{{image}}' />
-{% endfor %}
 </head>
 <body>
+<H1>Choose from the Following eCards</H1>
+{% load static %}
 
+<form action="{% url 'detail' %}"  method="POST">{% csrf_token %}
+    {% for image in images %}
+    <input type="radio" name='ecard' id='{{image}}' value='{{image}}'/>
+    <label for='{{image}}'><img src='/static/{{image}}' width="25%" height="25%" alt="Gurudeva" align="middle"/></label>
+{% endfor %}
+    <br>
+    <input type="submit"  value="Submit">
+</form>
 </body>
+
 </html>
